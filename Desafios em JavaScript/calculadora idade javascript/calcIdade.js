@@ -1,4 +1,4 @@
-document.getElementById("calc").onclick = function() {
+document.getElementById("calcIdade").onclick = function() {
     var nome = prompt("Qual o seu nome?");
     var dia = parseInt(prompt("Qual dia você nasceu?"));
     var mes = parseInt(prompt("Qual mês você nasceu?"));
@@ -39,6 +39,52 @@ document.getElementById("calc").onclick = function() {
     } else {
         alert(nome + ", daqui 40 meses você ainda não será maior de idade.");
         alert(nome + ", sua idade será de " + anos + " anos, " + meses + " meses e " + dias + " dias.");
+    }
+}
+document.getElementById("calcIMC").onclick = function() {
+    var nome = prompt("Qual o seu nome?");
+    var peso = prompt("Qual o seu peso? (em quilogramas)");
+    var altura = prompt("Qual sua altura? (em metros. Ex: 1.72 '1 metro e 72 centimetros'");
+    altura = parseFloat(altura);
+    const imc = peso / (altura * altura);
+
+    if(imc >= 30){
+        alert(nome+ ", você está acima do peso, com imc igual a: " + imc);
+    }else{
+        alert(nome+", você está em um peso normal, com imc igual a: " + imc)
+    }
+}
+document.getElementById("calcAposent").onclick = function() {
+    function aposentadoria(){
+        if(sexo == 1){
+            var apos = parseInt(anosCont) + parseInt(idade);
+            if (apos >= 95){
+                alert(`Parabéns ${nome}! Você está apto para ter sua aposentadoria!`)
+            }else{
+                alert(`Infelizmente ${nome}, ainda não está apto para sua aposentadoria.`)
+            }
+        } else if(sexo == 2){
+            var apos = parseInt(anosCont) + parseInt(idade);
+            if (apos >= 85){
+                alert(`Parabéns ${nome}! Você está apta para ter sua aposentadoria!`)
+            }else{
+                alert(`Infelizmente ${nome}, ainda não está apta para sua aposentadoria.`)
+            }
+        }else{
+            alert("Digite um sexo válido por favor.")
+        }
+    }
+
+    var nome = prompt("Qual o seu nome?");
+    var sexo = prompt("Qual o seu sexo? (1) homem - (2) mulher");
+    var idade = prompt("Qual a sua idade.");
+    var anosCont = prompt("Quantos anos de trabalho você possui?");
+
+    if(anosCont < 35){
+        alert("Você não possui o tempo minimo de trabalho para a aposentadoria.");
+        alert("Tempo minimo 35. Seu tempo: " + anosCont);
+    } else if (anosCont >= 35){
+        aposentadoria();
     }
 
 }
