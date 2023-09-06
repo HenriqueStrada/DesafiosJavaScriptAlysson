@@ -61,7 +61,7 @@ document.getElementById("calcAposent").onclick = function() {
             if (apos >= 95){
                 alert(`Parabéns ${nome}! Você está apto para ter sua aposentadoria!`)
             }else{
-                alert(`Infelizmente ${nome}, ainda não está apto para sua aposentadoria.`)
+                alert(`Infelizmente ${nome}, ainda não está apto para sua aposentadoria!`)
             }
         } else if(sexo == 2){
             var apos = parseInt(anosCont) + parseInt(idade);
